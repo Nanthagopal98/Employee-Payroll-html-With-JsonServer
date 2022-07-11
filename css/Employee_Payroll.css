@@ -113,3 +113,27 @@
 .salary{
     width: 150px;
 }
+textarea{
+    width: 500px;
+    height: 70px;
+}
+.select-date{
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #42515f;
+    font-family: "Roboto";
+}
+.select-month{
+    margin-left: 20px;
+    padding: 10px 30px;
+    font-size: 16px;
+    color: #42515f;
+    font-family: "Roboto";
+}
+.select-year{
+    margin-left: 20px;
+    padding: 10px 25px;
+    font-size: 16px;
+    color: #42515f;
+    font-family: "Roboto";
+}
