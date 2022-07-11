@@ -56,6 +56,7 @@
 }
 .form-header{
     font-size: 20px;
+    padding-bottom: 30px;
     font-weight: bold;
 }
 .form-field{
@@ -65,7 +66,6 @@
 }
 .text-label{
     padding: 12px 12px 12px 0;
-    color: #42515f;
     color: #42515f;
     font-family: "Roboto";
     font-size: 16px;
@@ -97,7 +97,19 @@
     max-width: 40px;
     margin-left: 10px;
 }
-.radio-input{
-    
+.select-box{
+    font-size: 16px;
+    color: #42515f;
+    font-family: "Roboto";
+    margin-right: 50px;
 }
-
+.salary-range{
+    font-size: 16px;
+    color: #42515f;
+    font-family: "Roboto";
+    margin-right: 50px;
+    margin-left:20px ;
+}
+.salary{
+    width: 150px;
+}

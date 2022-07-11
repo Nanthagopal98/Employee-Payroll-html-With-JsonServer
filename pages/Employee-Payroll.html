@@ -47,12 +47,41 @@
                 </div>
                 <div class="profile-radio-content">
                     <label>
-                    <input type="radio" id="profile1" name="profile" required value="../assets/pro4.jpg">
+                    <input type="radio" id="profile1" name="profile"  value="../assets/pro4.jpg" required>
                     <img class="profile" src="../assets/pro4.jpg">
                     </label>
                 </div>
             </div>
+            <div class="form-field">
+                <label class="text-label" for="gender">Gender</label>
+                <div>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male" class="select-box">Male</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male" class="select-box">Female</label>
+                </div>
+            </div>
+            <div class="form-field">
+                <label class="text-label" for="department">Department</label>
+                <div>
+                    <input type="checkbox" id="dept" name="dept" value="dept">
+                    <label for="dept" class="select-box">HR</label>
+                    <input type="checkbox" id="dept" name="dept" value="dept">
+                    <label for="dept" class="select-box">Developer</label>
+                    <input type="checkbox" id="dept" name="dept" value="dept">
+                    <label for="dept" class="select-box">Testing</label>
+                    <input type="checkbox" id="dept" name="dept" value="dept">
+                    <label for="dept" class="select-box">Management</label>
+                </div>
+            </div>
+            <div class="form-field">
+                <label class="text-label" for="salary" >Salary</label>
+                <input class="salary" type="range" id="salary" name="salary" step="1000" max="50000"
+                min="20000" value="40000">
+                <output class="salary-range" for="salary">40000</output>
+            </div>
         </form>
     </div>
+    <script src="../js/Employee Payroll Script.js"></script>
 </body>
 </html>
