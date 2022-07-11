@@ -137,3 +137,32 @@ textarea{
     color: #42515f;
     font-family: "Roboto";
 }
+footer{
+    display: flex;
+    padding: 30px 0px 0px 0px;
+    justify-content:space-between ;
+}
+.button{
+    font-size: 20px;
+    width: 90px;
+    height: 40px;
+    font-size: 16px;
+    color: #42515f;
+    font-family: "Roboto";
+    border: 1px solid #707070;
+    cursor: pointer;
+    color: #42515f;
+    border-radius: 5px;
+    text-align: center;
+}
+.cancel{
+    margin-right: 250px;
+    text-decoration: none;
+}
+.submit{
+    display: flex;
+    align-content: flex-end;
+}
+.reset{
+    margin-left: 30px;
+}
