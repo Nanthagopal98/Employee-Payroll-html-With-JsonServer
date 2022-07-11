@@ -9,14 +9,23 @@
     <link rel="Stylesheet" href="../css/Employee_Payroll.css">
 </head>
 <body>
-    <header>
+    <header class="logo-header">
         <div class="logo-Container">
-            <img class="img-logo"   src="../assets/Logo.jpg">
+            <img class="img-logo" src="../assets/Logo.jpg">
             <div class="header-logo">
                 <span class="logo-employee">Employee</span><br>
                 <span class="logo-payroll">Payroll</span>
             </div>
         </div>
     </header>
+    <div class="div-form">
+        <form class="form-content" onclick="save(event); return false">
+            <header class="form-header">Employee Payroll Form</header>
+            <div class="form-field">
+                <label class="label" for="name">Name</label>
+                <input class="input" type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
