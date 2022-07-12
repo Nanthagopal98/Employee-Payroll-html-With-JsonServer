@@ -19,7 +19,7 @@
         </div>
     </header>
     <div class="div-form">
-        <form class="form-content" onclick="SubmitEvent(save); return false">
+        <form class="form-content" onclick="save(event); return false">
             <header class="form-header">Employee Payroll Form</header>
             <div class="form-field">
                 <label class="text-label" for="name">Name</label>
@@ -63,7 +63,7 @@
                         <label for="male" class="select-box">Male</label>
                     </div>
                     <div>
-                        <input type="radio" id="male" name="gender" value="male">
+                        <input type="radio" id="male" name="gender" value="female">
                         <label for="male" class="select-box">Female</label>
                     </div>
                 </div>
@@ -72,19 +72,19 @@
                 <label class="text-label" for="department">Department</label>
                 <div class="radio">
                     <div>
-                        <input type="checkbox" id="dept" name="dept" value="dept">
+                        <input type="checkbox" id="dept" name="dept" value="hr">
                         <label for="dept" class="select-box">HR</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="dept" name="dept" value="dept">
+                        <input type="checkbox" id="dept" name="dept" value="engineer">
                         <label for="dept" class="select-box">Engineer</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="dept" name="dept" value="dept">
+                        <input type="checkbox" id="dept" name="dept" value="testing">
                         <label for="dept" class="select-box">Testing</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="dept" name="dept" value="dept">
+                        <input type="checkbox" id="dept" name="dept" value="other">
                         <label for="dept" class="select-box">Other</label>
                     </div>
                 </div>
@@ -163,7 +163,7 @@
             </div>
             <div class="form-field">
                 <label class="text-label" for="notes">Notes</label>
-                <textarea class="text-input"></textarea>
+                <textarea id="notes" name="Notes" class="text-input"></textarea>
             </div>
             <footer>
                 <button class="button cancel">Cancel</button>
@@ -175,5 +175,6 @@
         </form>
     </div>
     <script src="../js/EmployeePayrollScript.js"></script>
+    <script src="../js/PayrollClass.js"></script>
 </body>
 </html>
