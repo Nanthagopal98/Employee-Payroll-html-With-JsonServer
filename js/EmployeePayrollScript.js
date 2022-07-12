@@ -80,6 +80,31 @@ const getSelectedValues = (propertyValue) => {
     return selItem;
 }
 
+const resetValues = () => {
+    satValue('#name','');
+    unSelectValue('[name=profile]');
+    unSelectValue('[name=gender]');
+    unSelectValue('[name=dept]');
+    setValue('#salary','20000');
+    setTextValue('#day','Day');
+    setTextValue('#month','Month');
+    setTextValue('#year','Year');
+    setValue('#notes','');
+}
 
+const setValue = (id, value) =>{
+    const element = document.querySelector(id);
+    element.value = value;
+}
+
+const setTextValue = (id, value) =>{
+    const element = document.querySelector(id);
+    element.textContent = value;
+}
+
+const unSelectValue = (propertyValue) => {
+    let allItems = document.querySelector(propertyValue);
+    allItems.forEach(item => item.checked = false);
+}
 
 
