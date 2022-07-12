@@ -19,61 +19,76 @@
         </div>
     </header>
     <div class="div-form">
-        <form class="form-content" onclick="save(event); return false">
+        <form class="form-content" onclick="SubmitEvent(save); return false">
             <header class="form-header">Employee Payroll Form</header>
             <div class="form-field">
                 <label class="text-label" for="name">Name</label>
                 <input class="text-input" type="text" id="name" name="name" placeholder="Your Name" required>
+                <error-output class="error-output"></error-output>
             </div>
             <div class="form-field">
                 <label class="text-label" for="name">Profile Photo</label>
-                <div class="profile-radio-content">
-                    <label>
-                    <input type="radio" id="profile1" name="profile" required value="../assets/pro1.jpg">
-                    <img class="profile" src="../assets/pro1.jpg">
-                    </label>
-                </div>
-                <div class="profile-radio-content">
-                    <label>
-                    <input type="radio" id="profile1" name="profile" required value="../assets/pro2.jpg">
-                    <img class="profile" src="../assets/pro2.jpg">
-                    </label>
-                </div>
-                <div class="profile-radio-content">
-                    <label>
-                    <input type="radio" id="profile1" name="profile" required value="../assets/pro3.jpg">
-                    <img class="profile" src="../assets/pro3.jpg">
-                    </label>
-                </div>
-                <div class="profile-radio-content">
-                    <label>
-                    <input type="radio" id="profile1" name="profile"  value="../assets/pro4.jpg" required>
-                    <img class="profile" src="../assets/pro4.jpg">
-                    </label>
+                <div class="radio">
+                    <div class="profile-radio-content">
+                        <label>
+                            <input type="radio" id="profile1" name="profile" required value="../assets/pro1.jpg">
+                            <img class="profile" src="../assets/pro1.jpg">
+                        </label>
+                    </div>
+                    <div class="profile-radio-content">
+                        <label>
+                            <input type="radio" id="profile1" name="profile" required value="../assets/pro2.jpg">
+                            <img class="profile" src="../assets/pro2.jpg">
+                        </label>
+                    </div>
+                    <div class="profile-radio-content">
+                        <label>
+                            <input type="radio" id="profile1" name="profile" required value="../assets/pro3.jpg">
+                            <img class="profile" src="../assets/pro3.jpg">
+                        </label>
+                    </div>
+                    <div class="profile-radio-content">
+                        <label>
+                            <input type="radio" id="profile1" name="profile" value="../assets/pro4.jpg" required>
+                            <img class="profile" src="../assets/pro4.jpg">
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="form-field">
                 <label class="text-label" for="gender">Gender</label>
-                <div>
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male" class="select-box">Male</label>
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male" class="select-box">Female</label>
+                <div class="radio">
+                    <div>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male" class="select-box">Male</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male" class="select-box">Female</label>
+                    </div>
                 </div>
             </div>
             <div class="form-field">
                 <label class="text-label" for="department">Department</label>
-                <div>
-                    <input type="checkbox" id="dept" name="dept" value="dept">
-                    <label for="dept" class="select-box">HR</label>
-                    <input type="checkbox" id="dept" name="dept" value="dept">
-                    <label for="dept" class="select-box">Developer</label>
-                    <input type="checkbox" id="dept" name="dept" value="dept">
-                    <label for="dept" class="select-box">Testing</label>
-                    <input type="checkbox" id="dept" name="dept" value="dept">
-                    <label for="dept" class="select-box">Management</label>
+                <div class="radio">
+                    <div>
+                        <input type="checkbox" id="dept" name="dept" value="dept">
+                        <label for="dept" class="select-box">HR</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="dept" name="dept" value="dept">
+                        <label for="dept" class="select-box">Engineer</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="dept" name="dept" value="dept">
+                        <label for="dept" class="select-box">Testing</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="dept" name="dept" value="dept">
+                        <label for="dept" class="select-box">Other</label>
+                    </div>
                 </div>
-            </div>
+                </div>
             <div class="form-field">
                 <label class="text-label" for="salary" >Salary</label>
                 <input class="salary" type="range" id="salary" name="salary" step="1000" max="50000"
@@ -82,8 +97,9 @@
             </div>
             <div class="form-field">
                 <label class="text-label" for="startDate">Start Date</label>
-                <div>
-                    <select class="select-date" id="day" name="Day">
+                <div class="dateAlignment">
+                    <select class="select-date" id="day" name="Day" >
+                        <option value="">Day</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -117,6 +133,7 @@
                         <option value="31">31</option>
                     </select>
                     <select class="select-month" id="month" name="Month">
+                        <option value="">Month</option>
                         <option value="Jan">Jan</option>
                         <option value="Feb">Feb</option>
                         <option value="March">March</option>
@@ -131,6 +148,7 @@
                         <option value="Dec">Dec</option>
                     </select>
                     <select class="select-year" id="year" name="Year">
+                        <option value="">Year</option>
                         <option value="2015">2015</option>
                         <option value="2016">2016</option>
                         <option value="2017">2017</option>
@@ -141,6 +159,7 @@
                         <option value="2022">2022</option>
                     </select>
                 </div>
+                <error-output class="error-output"></error-output>
             </div>
             <div class="form-field">
                 <label class="text-label" for="notes">Notes</label>
@@ -155,6 +174,6 @@
             </footer>
         </form>
     </div>
-    <script src="../js/Employee Payroll Script.js"></script>
+    <script src="../js/EmployeePayrollScript.js"></script>
 </body>
 </html>
