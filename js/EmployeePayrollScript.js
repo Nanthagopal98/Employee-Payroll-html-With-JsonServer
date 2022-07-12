@@ -22,6 +22,50 @@ window.addEventListener('DOMContentLoaded',(event) =>{
     });
 });
 
+const save = () =>{
+    try{
+        let employeePayrollData = createEmployeePayroll();
+    }
+    catch(e){
+        return;
+    }
+}
+
+const createEmployeePayroll = () =>{
+    let employeePayrollData = new PayrollClass();
+    try{
+        employeePayrollData.empName = getInputValueById('#name');
+    }
+    catch(e){
+        setTextValue('.error-output',e);
+        throw e;
+    }
+    employeePayrollData.empProfile = getSelectedValues('[name=profile]').pop();
+    employeePayrollData.gender = getSelectedValues('[name=gender]').pop();
+    employeePayrollData.dept = getSelectedValues('[name=dept]').pop();
+    employeePayrollData.salary = getInputValueById('#salary');
+    employeePayrollData.note = getInputValueById('#notes');
+    let date = getInputValueById('#day')+" "+getInputValueById('#month')+" "+getInputValueById('#year');
+    employeePayrollData.startDate = Date.parse(date);
+    alert(employeePayrollData.toString());
+    return employeePayrollData;
+}
+
+const getInputValueById = (id) =>{
+    let value = document.querySelector(id).value;
+    return value;
+}
+
+const getSelectedValues = (propertyValue) => {
+    let allItems = document.querySelectorAll(propertyValue);
+    let selItem = [];
+    allItems.forEach(item => {
+        if(item.checked){
+            selItem.push(item.value);
+        }
+    });
+    return selItem;
+}
 
 
 
