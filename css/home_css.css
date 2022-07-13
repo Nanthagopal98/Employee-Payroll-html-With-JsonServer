@@ -119,6 +119,7 @@ tr:not(:first-child){
     padding: 1px 7px;
     background-color: #e9fea5;
     border-radius: 7px;
+    margin-right: 2px;
 }
 .action_img{
     padding-right: 20px;
