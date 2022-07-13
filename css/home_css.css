@@ -15,6 +15,7 @@
     flex-direction: row;
     width: 80%;
     border: 0px solid green;
+    padding-bottom: 15px;
 }
 .img_header{
     padding-right: 5px;
@@ -30,4 +31,56 @@
 .header_payroll{
     color: #42515f;
 }
+.emp_Detail{
+    background-color: #f7f7f7;
+    border: 0px solid green;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: calc(100vh - 80px);
+    padding: 25px 0px;
+}
+.emp_Detail_container{
+    width: 80%; 
+    display: flex;
+    justify-content: space-between;
+    border: 0px solid green;
+    padding-bottom: 25px;
+}
+.emp_Detail_text{
+    font-weight: bold;
+    font-size: 18px;
+    color: #42515f;
+    padding-right: 10px;
+}
+.emp_Detail_count{
+    background-color: #82a70c;
+    color: #f7f7f7;
+    padding: 4px;
+    border-radius: 10px;
+}
+.add_user{
+    display: flex;
+    padding: 5px;
+    background-color: #82a70c;
+    border-radius: 3px;
+    cursor: pointer;
+    max-height: 40px;
+    align-items: center;
+}
+.add_user_text{
+    color: #ffffff;
+    align-content: center;
+    padding: 3px;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.plus{
+    padding-right: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
 
