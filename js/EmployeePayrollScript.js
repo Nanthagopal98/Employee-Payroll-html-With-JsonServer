@@ -33,6 +33,7 @@ const save = () =>{
 }
 
 function storeDataInLocalStorage(employeePayrollData){
+    //localStorage.clear();
     let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
     if(employeePayrollList != undefined){
         employeePayrollList.push(employeePayrollData);
@@ -55,11 +56,11 @@ const createEmployeePayroll = () =>{
     }
     employeePayrollData.empProfile = getSelectedValues('[name=profile]').pop();
     employeePayrollData.gender = getSelectedValues('[name=gender]').pop();
-    employeePayrollData.dept = getSelectedValues('[name=dept]').pop();
+    employeePayrollData.department = getSelectedValues('[name=department]');
     employeePayrollData.salary = getInputValueById('#salary');
     employeePayrollData.note = getInputValueById('#notes');
     let date = getInputValueById('#day')+" "+getInputValueById('#month')+" "+getInputValueById('#year');
-    employeePayrollData.startDate = Date.parse(date);
+    employeePayrollData.startDate = new Date(Date.parse(date)).toLocaleDateString();
     alert(employeePayrollData.toString());
     return employeePayrollData;
 }
@@ -84,7 +85,7 @@ const resetValues = () => {
     satValue('#name','');
     unSelectValue('[name=profile]');
     unSelectValue('[name=gender]');
-    unSelectValue('[name=dept]');
+    unSelectValue('[name=department]');
     setValue('#salary','20000');
     setTextValue('#day','Day');
     setTextValue('#month','Month');

@@ -34,11 +34,11 @@ class PayrollClass{
         this._gender = gender;
     }
 
-    get  dept(){
-        return this._dept;
+    get  department(){
+        return this._department;
     }
-    set dept(dept){
-        this._dept = dept;
+    set department(department){
+        this._department = department;
     }
 
     get  salary(){
@@ -64,7 +64,7 @@ class PayrollClass{
 
     toString(){
         return "Id: " + this.id + "\nName: " + this.empName + "\nProfile Path: " + this.empProfile +
-            "\nGender: " + this.gender + "\nDepartment: "+ this.dept +"\nSalary: " + this.salary +
+            "\nGender: " + this.gender + "\nDepartment: "+ this.department +"\nSalary: " + this.salary +
             "\nStart Date: " + this.startDate +"\nNote: "+this.note;
     }
     }
