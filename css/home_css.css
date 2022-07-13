@@ -45,7 +45,8 @@
     display: flex;
     justify-content: space-between;
     border: 0px solid green;
-    padding-bottom: 25px;
+    margin-bottom:auto;
+    align-items: center;
 }
 .emp_Detail_text{
     font-weight: bold;
@@ -65,7 +66,6 @@
     background-color: #82a70c;
     border-radius: 3px;
     cursor: pointer;
-    max-height: 40px;
     align-items: center;
 }
 .add_user_text{
