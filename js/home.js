@@ -10,11 +10,10 @@ const empstoreDataInLocalStorage = () => {
     JSON.parse(localStorage.getItem('EmployeePayrollList')) : [];
 }
 const createInnetHtml = () => {
-    if(getData.length == 0) {return;}
     const tableheader = "<tr><th>Profile</th><th>Name</th><th>Gender</th><th>Department</th><th>Salary</th>" +
         "<th>Start Date</th><th>Action</th></tr>";
     let innerHtlm = `${tableheader}`;
-
+    if(getData.length == 0) {return;}
     for (const employeePayrollData of getData) {
         innerHtlm = `${innerHtlm}
      <tr>
@@ -25,7 +24,7 @@ const createInnetHtml = () => {
         <td>${employeePayrollData._salary}</td>
         <td>${employeePayrollData._startDate}</td>
         <td>
-            <img id="${employeePayrollData._id}" onclick="remove(this)" class="action_img" src="../assets/trashbin.jpeg">
+            <img id="${employeePayrollData._empName}" onclick="remove(this)" class="action_img" src="../assets/trashbin.jpeg">
             <img id="${employeePayrollData._id}" onclick="update(this)" class="action_img" src="../assets/add.jpeg">
         </td>
     </tr>
@@ -33,8 +32,7 @@ const createInnetHtml = () => {
     }
     document.querySelector('#table-display').innerHTML = innerHtlm;
 }
-
-const createEmployeePayrollJSON = () => {
+/*const createEmployeePayrollJSON = () => {
     let employeePayrollList = [
         {
             _empProfile : '../assets/pro2.jpg',
@@ -58,7 +56,7 @@ const createEmployeePayrollJSON = () => {
         }
     ];
     return employeePayrollList;
-}
+}*/
 
 const getDeptHtml = (deptList) =>{
     let deptHtml = '';
@@ -66,4 +64,15 @@ const getDeptHtml = (deptList) =>{
         deptHtml = `${deptHtml} <div class="dept">${dept}</div>`
     }
     return deptHtml
+}
+
+const remove = (node) =>{
+    // empName passed instead of Id so it deletes the first matching name, better use id
+    let empPayrollData = getData.find(empData => empData._empName == node.id)
+    if(!empPayrollData) return;
+    const index = getData.map(empData => empData._empName).indexOf(empPayrollData._empName);
+    getData.splice(index,1);
+    localStorage.setItem('EmployeePayrollList', JSON.stringify(getData));
+    document.querySelector(".emp_Detail_count").textContent = getData.length;
+    createInnetHtml();
 }
