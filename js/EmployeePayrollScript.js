@@ -1,3 +1,6 @@
+let isUpdate = false;
+let empPayrollObj = {};
+
 const salary = document.querySelector('#salary');
 const outputSalary = document.querySelector('.salary-range');
 salary.addEventListener('input', function(){
@@ -20,6 +23,7 @@ window.addEventListener('DOMContentLoaded',(event) =>{
             ERROR_OP.textContent = e;
         }
     });
+    checkForUpdate();
 });
 
 const save = () =>{
@@ -82,7 +86,7 @@ const getSelectedValues = (propertyValue) => {
 }
 
 const resetValues = () => {
-    satValue('#name','');
+    setValue('#name','');
     unSelectValue('[name=profile]');
     unSelectValue('[name=gender]');
     unSelectValue('[name=department]');
@@ -106,6 +110,62 @@ const setTextValue = (id, value) =>{
 const unSelectValue = (propertyValue) => {
     let allItems = document.querySelector(propertyValue);
     allItems.forEach(item => item.checked = false);
+}
+
+/*const setSelectedValue = (propertyValue, value) => {
+    let allItems = document.querySelector(propertyValue);
+    allItems.forEach(item => {
+        if(Array.isArray(value)){
+            if(value.includes(item.value)){
+                item.checked = true;
+            }
+        }
+        else if(item.value === value){
+            item.checked = true;
+        }
+    });
+}*/
+
+const setSelectedValue =(propertyValue, value) =>{
+    let allItems = document.querySelectorAll(propertyValue);
+    allItems.forEach(item =>{
+        if(Array.isArray(value))
+        {
+            if(value.includes(item.value))
+            {
+                item.checked = true;
+            }
+        }
+        else
+        {
+            if(item.value ===value)
+            {
+                item.checked = true;
+            }
+        }
+    });
+}
+
+const checkForUpdate = () => {
+    const empPayrollJson = localStorage.getItem('editEmp');
+    isUpdate = empPayrollJson ? true : false;
+    if(!isUpdate) return;
+    empPayrollObj = JSON.parse(empPayrollJson);
+    setForm();
+}
+
+const setForm = () => {
+    setValue('#name', empPayrollObj._empName);
+    setSelectedValue('[name=profile]', empPayrollObj._empProfile);
+    setSelectedValue('[name=gender]', empPayrollObj._gender);
+    setSelectedValue('[name=department]', empPayrollObj._department);
+    setValue('#salary',empPayrollObj._salary);
+    setTextValue('.salary-range',empPayrollObj._salary);
+    let date = (empPayrollObj._startDate).split('/');
+    setValue('#day',date[1]);
+    setValue('#month',date[0]);
+    setValue('#year',date[2]);
+    setValue('#notes', empPayrollObj._note);
 }
 
 

@@ -25,7 +25,7 @@ const createInnetHtml = () => {
         <td>${employeePayrollData._startDate}</td>
         <td>
             <img id="${employeePayrollData._empName}" onclick="remove(this)" class="action_img" src="../assets/trashbin.jpeg">
-            <img id="${employeePayrollData._id}" onclick="update(this)" class="action_img" src="../assets/add.jpeg">
+            <img id="${employeePayrollData._empName}" onclick="update(this)" class="action_img" src="../assets/add.jpeg">
         </td>
     </tr>
 `;
@@ -75,4 +75,11 @@ const remove = (node) =>{
     localStorage.setItem('EmployeePayrollList', JSON.stringify(getData));
     document.querySelector(".emp_Detail_count").textContent = getData.length;
     createInnetHtml();
+}
+
+const update = (node) => {
+    let empPayrollData = getData.find(empData => empData._empName == node.id);
+    if(!empPayrollData) return;
+    localStorage.setItem('editEmp', JSON.stringify(empPayrollData));
+    window.location.replace(site_properties.add_emp_page);
 }
