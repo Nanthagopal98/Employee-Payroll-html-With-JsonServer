@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", (event) =>{
     getData = empstoreDataInLocalStorage();
     document.querySelector(".emp_Detail_count").textContent = getData.length;
     createInnetHtml();
+    localStorage.removeItem('editEmp');
 });
 
 const empstoreDataInLocalStorage = () => {
@@ -22,13 +23,12 @@ const createInnetHtml = () => {
         <td>${employeePayrollData._gender}</td>
         <td>${getDeptHtml(employeePayrollData._department)}</td>
         <td>${employeePayrollData._salary}</td>
-        <td>${employeePayrollData._startDate}</td>
+        <td>${stringifyDate(employeePayrollData._startDate)}</td>
         <td>
-            <img id="${employeePayrollData._empName}" onclick="remove(this)" class="action_img" src="../assets/trashbin.jpeg">
-            <img id="${employeePayrollData._empName}" onclick="update(this)" class="action_img" src="../assets/add.jpeg">
+            <img id="${employeePayrollData._id}" onclick="remove(this)" class="action_img" src="../assets/trashbin.jpeg">
+            <img id="${employeePayrollData._id}" onclick="update(this)" class="action_img" src="../assets/add.jpeg">
         </td>
-    </tr>
-`;
+    </tr>`;
     }
     document.querySelector('#table-display').innerHTML = innerHtlm;
 }
@@ -68,9 +68,9 @@ const getDeptHtml = (deptList) =>{
 
 const remove = (node) =>{
     // empName passed instead of Id so it deletes the first matching name, better use id
-    let empPayrollData = getData.find(empData => empData._empName == node.id)
+    let empPayrollData = getData.find(empData => empData._id == node.id)
     if(!empPayrollData) return;
-    const index = getData.map(empData => empData._empName).indexOf(empPayrollData._empName);
+    const index = getData.map(empData => empData._id).indexOf(empPayrollData._id);
     getData.splice(index,1);
     localStorage.setItem('EmployeePayrollList', JSON.stringify(getData));
     document.querySelector(".emp_Detail_count").textContent = getData.length;
@@ -78,7 +78,7 @@ const remove = (node) =>{
 }
 
 const update = (node) => {
-    let empPayrollData = getData.find(empData => empData._empName == node.id);
+    let empPayrollData = getData.find(empData => empData._id == node.id);
     if(!empPayrollData) return;
     localStorage.setItem('editEmp', JSON.stringify(empPayrollData));
     window.location.replace(site_properties.add_emp_page);

@@ -19,8 +19,12 @@
         </div>
     </header>
     <div class="div-form">
-        <form class="form-content" action="#" onreset="resetValues()" onsubmit="save()">
+        <form class="form-content" action="#" onreset="resetValues()" onsubmit="save(event)">
             <header class="form-header">Employee Payroll Form</header>
+            <!--<div class="form-field">
+                <label class="text-label" for="id">ID</label>
+                <input class="text-input" type="number" id="id" name="id" placeholder="Your Id" required>
+            </div>-->
             <div class="form-field">
                 <label class="text-label" for="name">Name</label>
                 <input class="text-input" type="text" id="name" name="name" placeholder="Your Name" required>
@@ -93,11 +97,11 @@
                 <label class="text-label" for="salary" >Salary</label>
                 <input class="salary" type="range" id="salary" name="salary" step="1000" max="50000"
                 min="20000" value="40000">
-                <output class="salary-range" for="salary">40000</output>
+                <output class="salary-range" id="salaryRange" for="salary">40000</output>
             </div>
             <div class="form-field">
                 <label class="text-label" for="startDate">Start Date</label>
-                <div class="dateAlignment">
+                <div class="dateAlignment" id = "date">
                     <select class="select-date" id="day" name="Day" >
                         <option value="">Day</option>
                         <option value="1">1</option>
@@ -134,18 +138,18 @@
                     </select>
                     <select class="select-month" id="month" name="Month">
                         <option value="">Month</option>
-                        <option value="1">Jan</option>
-                        <option value="2">Feb</option>
-                        <option value="3">March</option>
-                        <option value="4">April</option>
-                        <option value="5">May</option>
-                        <option value="6">June</option>
-                        <option value="7">July</option>
-                        <option value="8">Aug</option>
-                        <option value="9">Sept</option>
-                        <option value="10">Oct</option>
-                        <option value="11">Nov</option>
-                        <option value="12">Dec</option>
+                        <option value="Jan">Jan</option>
+                        <option value="Feb">Feb</option>
+                        <option value="Mar">March</option>
+                        <option value="Apr">April</option>
+                        <option value="May">May</option>
+                        <option value="Jun">June</option>
+                        <option value="Jul">July</option>
+                        <option value="Aug">Aug</option>
+                        <option value="Sep">Sept</option>
+                        <option value="Oct">Oct</option>
+                        <option value="Nov">Nov</option>
+                        <option value="Dec">Dec</option>
                     </select>
                     <select class="select-year" id="year" name="Year">
                         <option value="">Year</option>
@@ -159,7 +163,7 @@
                         <option value="2022">2022</option>
                     </select>
                 </div>
-                <error-output class="error-output"></error-output>
+                <error-output class="error-dateoutput error-output"></error-output>
             </div>
             <div class="form-field">
                 <label class="text-label" for="notes">Notes</label>
@@ -176,5 +180,7 @@
     </div>
     <script src="../js/EmployeePayrollScript.js"></script>
     <script src="../js/PayrollClass.js"></script>
+    <script src="../js/utilities.js"></script>
+    <script src="../js/site_properties.js"></script>
 </body>
 </html>
