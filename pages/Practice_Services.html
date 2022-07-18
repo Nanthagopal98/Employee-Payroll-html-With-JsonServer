@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <script src="../js/HttpService_Ajax_Promise.js"></script>
+    <style>
+        body{
+            margin: auto;
+        }
+        div{
+            border: 1px solid black;
+            background: lightblue;
+            padding: 50px;
+            width: 80%;
+            font-size: larger;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Check Services HTML</h1>
+    <div id="get"></div>
+    <div id="delete"></div>
+    <div id="post"></div>
+    <script>
+        const getElement = document.querySelector("#get");
+        const getURL = "http://localhost:3000/PayrollDB/1";
+        makePromiseCall("GET", getURL, true)
+            .then(responseText => {
+                getElement.textContent = "Get User Data :" + responseText;
+            })
+            .catch(error => { 
+                getElement.textContent = "Get Error Status: " + JSON.stringify(error); 
+            });
+
+        const deleteElement = document.querySelector("#delete");
+        const deleteURL = "http://localhost:3000/PayrollDB/2";
+        makePromiseCall("DELETE", deleteURL, false)
+            .then(responseText => {
+                deleteElement.textContent = "Delete User Data :" + responseText;
+            })
+            .catch(error => { 
+                deleteElement.textContent = "Delete Error Status" + JSON.stringify(error); 
+            });
+
+        const postElement = document.querySelector("#post");
+        const postURL = "http://localhost:3000/PayrollDB/";
+        const EmpData = 
+        {
+            "_empName": "Hari",
+            "_empProfile": "../assets/pro3.jpg",
+            "_gender": "Male",
+            "_department": [
+                "HR",
+                "Engineer",
+                "Other"
+                ],
+            "_salary": "35000",
+            "_note": "Hi",
+            "_startDate": "11 Jul 2022"
+        };
+        makePromiseCall("POST", postURL, false, EmpData)
+            .then(responseText => {
+                postElement.textContent = "Post User Data :" + responseText;
+            })
+            .catch(error => { 
+                postElement.textContent = "Post Error Status" + JSON.stringify(error); 
+            });
+    </script>
+</body>
+</html>

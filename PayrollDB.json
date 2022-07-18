@@ -1,0 +1,82 @@
+{
+  "PayrollDB": [
+    {
+      "_empName": "Nantha",
+      "_empProfile": "../assets/pro3.jpg",
+      "_gender": "Male",
+      "_department": [
+        "HR",
+        "Engineer",
+        "Other"
+      ],
+      "_salary": "35000",
+      "_note": "Hi",
+      "_startDate": "11 Jul 2022",
+      "id": 1
+    },
+    {
+      "_empName": "Ela",
+      "_empProfile": "../assets/pro4.jpg",
+      "_gender": "Male",
+      "_department": [
+        "HR",
+        "Engineer",
+        "Testing",
+        "Other"
+      ],
+      "_salary": "40000",
+      "_note": "hi",
+      "_startDate": "12 Jul 2022",
+      "id": 2
+    },
+    {
+      "_empName": "Senthil",
+      "_empProfile": "../assets/pro3.jpg",
+      "_gender": "Female",
+      "_department": [
+        "HR",
+        "Engineer"
+      ],
+      "_salary": "38000",
+      "_note": "hi",
+      "_startDate": "13 Jul 2022",
+      "id": 3
+    },
+    {
+      "_empName": "Subash",
+      "_empProfile": "../assets/pro4.jpg",
+      "_gender": "Male",
+      "_department": [
+        "HR"
+      ],
+      "_salary": "40000",
+      "_note": "",
+      "_startDate": "13 Jul 2022",
+      "id": 4
+    },
+    {
+      "_empName": "Mathi",
+      "_empProfile": "../assets/pro1.jpg",
+      "_gender": "Male",
+      "_department": [
+        "HR"
+      ],
+      "_salary": "40000",
+      "_note": "hi",
+      "_startDate": "10 Jul 2022",
+      "id": 5
+    },
+    {
+      "_empName": "Praveena",
+      "_empProfile": "../assets/pro1.jpg",
+      "_gender": "Female",
+      "_department": [
+        "Engineer"
+      ],
+      "_salary": "40000",
+      "_note": "gdf",
+      "_startDate": "14 Jul 2022",
+      "id": 6
+    }
+  ]
+}

@@ -1,12 +1,5 @@
 class PayrollClass{
-
-    get  id(){
-        return this._id
-    }
-    set id(id){
-        this._id = id;
-    }
-
+    id;
     get empName(){
         return this._empName;
     }
@@ -79,4 +72,4 @@ class PayrollClass{
             "\nGender: " + this.gender + "\nDepartment: "+ this.department +"\nSalary: " + this.salary +
             "\nStart Date: " + empDate +"\nNote: "+this.note;
     }
-    }
+}
